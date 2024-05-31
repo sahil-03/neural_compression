@@ -6,9 +6,15 @@ from pathlib import Path
 from scipy.io import wavfile
 
 DATA_PATH = Path(__file__).parent / 'data/'
+BUILD_PATH = Path(__file__).parent / 'build'
 
 def plot_wav(file_path: str, file_no: int) -> None: 
     sample_rate, data = wavfile.read(file_path)
+
+    # with open(f'{BUILD_PATH}/data.txt', 'w') as f: 
+    #     for d in data:
+    #         f.write(f'{d}\n')
+
     if len(data.shape) == 2: 
         data = data.mean(axis=1)
     time = np.arange(data.shape[0]) / sample_rate
@@ -46,15 +52,17 @@ def get_wav_file_info(file_path: str, file_no: int) -> None:
         print(f'------------------ End ------------------\n\n')
 
 def main(): 
-    file_no = 0
-    for file_path in DATA_PATH.iterdir():
-        if file_no == 5: 
-            break
-        if file_path.is_file():
-            file_no += 1
-            get_wav_file_info(file_path, file_no)
-            plot_wav(file_path, file_no)
+    # file_no = 0
+    # for file_path in DATA_PATH.iterdir():
+    #     if file_no == 1: 
+    #         break
+    #     if file_path.is_file():
+    #         file_no += 1
+    #         # get_wav_file_info(file_path, file_no)
+    #         plot_wav(file_path, file_no)
     # print(f'Done plotting {file_no} files')
+    file_path = '/Users/sahil/Documents/neuralink_compression/data/0ab237b7-fb12-4687-afed-8d1e2070d621.wav'
+    plot_wav(file_path, 1)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,3 @@
+/Users/sahil/Documents/neuralink_compression/build/CMakeFiles/neural_compress.dir
+/Users/sahil/Documents/neuralink_compression/build/CMakeFiles/edit_cache.dir
+/Users/sahil/Documents/neuralink_compression/build/CMakeFiles/rebuild_cache.dir

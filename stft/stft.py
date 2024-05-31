@@ -125,11 +125,11 @@ def main():
         U_r = U[:, :r]
         S_r = np.diag(S[:r])
         Vt_r = Vt[:r, :]
-        X_approx = U_r @ S_r @ Vt_r
+        compressed = U_r @ S_r @ Vt_r
 
 
         # Find istft
-        inverted_stft = lr.istft(X_approx, hop_length= 512)
+        inverted_stft = lr.istft(compressed, hop_length= 512)
         plot_spectrogram(inverted_stft, sample_rate, 'recon_spectrogram.png')
 
         sf.write('reconstructed_audio.wav', inverted_stft, sample_rate)
