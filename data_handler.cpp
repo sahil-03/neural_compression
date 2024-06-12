@@ -123,13 +123,13 @@ int WAVHandler::read_wav_file_subchunk2() {
 }
 
 
-int main() {
-    WAVHandler wav_handler;
-    auto start = std::chrono::high_resolution_clock::now();
-    wav_handler.open_wav_file("/Users/sahil/Documents/neuralink_compression/data/0ab237b7-fb12-4687-afed-8d1e2070d621.wav");
-    auto end = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count(); 
-    std::cout << "Time taken to read WAV file: " << duration / 1000 << " milliseconds" << std::endl;
+// int main() {
+//     WAVHandler wav_handler;
+//     auto start = std::chrono::high_resolution_clock::now();
+//     wav_handler.open_wav_file("/Users/sahil/Documents/neuralink_compression/data/0ab237b7-fb12-4687-afed-8d1e2070d621.wav");
+//     auto end = std::chrono::high_resolution_clock::now();
+//     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count(); 
+//     std::cout << "Time taken to read WAV file: " << duration / 1000 << " milliseconds" << std::endl;
 
-    return 0;
-}
+//     return 0;
+// }

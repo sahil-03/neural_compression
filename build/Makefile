@@ -129,29 +129,53 @@ neural_compress/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_compress.dir/build.make CMakeFiles/neural_compress.dir/build
 .PHONY : neural_compress/fast
 
-data_handler.o: data_handler.cpp.o
-.PHONY : data_handler.o
+fft.o: fft.cpp.o
+.PHONY : fft.o
 
 # target to build an object file
-data_handler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_compress.dir/build.make CMakeFiles/neural_compress.dir/data_handler.cpp.o
-.PHONY : data_handler.cpp.o
+fft.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_compress.dir/build.make CMakeFiles/neural_compress.dir/fft.cpp.o
+.PHONY : fft.cpp.o
 
-data_handler.i: data_handler.cpp.i
-.PHONY : data_handler.i
+fft.i: fft.cpp.i
+.PHONY : fft.i
 
 # target to preprocess a source file
-data_handler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_compress.dir/build.make CMakeFiles/neural_compress.dir/data_handler.cpp.i
-.PHONY : data_handler.cpp.i
+fft.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_compress.dir/build.make CMakeFiles/neural_compress.dir/fft.cpp.i
+.PHONY : fft.cpp.i
 
-data_handler.s: data_handler.cpp.s
-.PHONY : data_handler.s
+fft.s: fft.cpp.s
+.PHONY : fft.s
 
 # target to generate assembly for a file
-data_handler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_compress.dir/build.make CMakeFiles/neural_compress.dir/data_handler.cpp.s
-.PHONY : data_handler.cpp.s
+fft.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_compress.dir/build.make CMakeFiles/neural_compress.dir/fft.cpp.s
+.PHONY : fft.cpp.s
+
+stft.o: stft.cpp.o
+.PHONY : stft.o
+
+# target to build an object file
+stft.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_compress.dir/build.make CMakeFiles/neural_compress.dir/stft.cpp.o
+.PHONY : stft.cpp.o
+
+stft.i: stft.cpp.i
+.PHONY : stft.i
+
+# target to preprocess a source file
+stft.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_compress.dir/build.make CMakeFiles/neural_compress.dir/stft.cpp.i
+.PHONY : stft.cpp.i
+
+stft.s: stft.cpp.s
+.PHONY : stft.s
+
+# target to generate assembly for a file
+stft.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_compress.dir/build.make CMakeFiles/neural_compress.dir/stft.cpp.s
+.PHONY : stft.cpp.s
 
 # Help Target
 help:
@@ -162,9 +186,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... neural_compress"
-	@echo "... data_handler.o"
-	@echo "... data_handler.i"
-	@echo "... data_handler.s"
+	@echo "... fft.o"
+	@echo "... fft.i"
+	@echo "... fft.s"
+	@echo "... stft.o"
+	@echo "... stft.i"
+	@echo "... stft.s"
 .PHONY : help
 
 

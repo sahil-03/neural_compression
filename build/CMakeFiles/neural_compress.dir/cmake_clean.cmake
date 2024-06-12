@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/neural_compress.dir/data_handler.cpp.o"
-  "CMakeFiles/neural_compress.dir/data_handler.cpp.o.d"
+  "CMakeFiles/neural_compress.dir/fft.cpp.o"
+  "CMakeFiles/neural_compress.dir/fft.cpp.o.d"
+  "CMakeFiles/neural_compress.dir/stft.cpp.o"
+  "CMakeFiles/neural_compress.dir/stft.cpp.o.d"
   "neural_compress"
   "neural_compress.pdb"
 )

@@ -10,6 +10,9 @@ from sklearn.decomposition import TruncatedSVD
 from scipy.io import wavfile
 from typing import Tuple
 
+from scipy.signal import stft
+from scipy.io import wavfile
+
 DATA_PATH = pathlib.Path(__file__).parent.parent / 'data/'
 STFT_PATH = pathlib.Path(__file__).parent.parent /'stft/'
 
@@ -79,11 +82,15 @@ def load_wav_file(file_path: str) -> Tuple[np.ndarray, int]:
     
 
 def plot_spectrogram(data, sr: int, save_to: str): 
-    D = lr.amplitude_to_db(np.abs(lr.stft(data)), ref=np.max)
+    D = np.abs(lr.stft(data))
+    D_db = lr.amplitude_to_db(D, ref=np.max)
+
     plt.figure(figsize=(10, 6))
-    lr.display.specshow(D, sr=sr, x_axis='time', y_axis='log')
+    lr.display.specshow(D_db, sr=sr, x_axis='time', y_axis='log')
     plt.colorbar(format='%+2.0f dB')
     plt.title('Spectrogram')
+    plt.xlabel('Time [s]')
+    plt.ylabel('Frequency [Hz]')
     plt.savefig(save_to)
 
 
@@ -106,42 +113,22 @@ def plot_wav(file_path: str, file_no: int) -> None:
 
 
 def main(): 
-    file_no = 0
-    for file_path in DATA_PATH.iterdir():
-        if file_no == 1: 
-            break
-        
-        data, sample_rate = load_wav_file(file_path)
+    file_path = '/Users/sahil/Documents/neuralink_compression/data/0ab237b7-fb12-4687-afed-8d1e2070d621.wav'
+    
+    data, sr = load_wav_file(file_path)
 
-        # Find stft
-        stft = lr.stft(data, n_fft=1024, hop_length=512)
-        plot_spectrogram(data, sample_rate, 'spectrogram.png')
+    print(len(data))
 
-        # Perform compression
-        # compressed = compress_complex(stft, n_components=20)
-        U, S, Vt = np.linalg.svd(stft, full_matrices=False)
-        
-        r = 20
-        U_r = U[:, :r]
-        S_r = np.diag(S[:r])
-        Vt_r = Vt[:r, :]
-        compressed = U_r @ S_r @ Vt_r
+    s = lr.stft(data, n_fft=1024, hop_length=512)
+    plot_spectrogram(data, sr, 'orig.png') 
+
+    print(s.shape)
+
+    f, t, Zxx = stft(data, sr, nperseg=1024, noverlap=512)
+    print(f.shape, t.shape, Zxx.shape)
+    
 
 
-        # Find istft
-        inverted_stft = lr.istft(compressed, hop_length= 512)
-        plot_spectrogram(inverted_stft, sample_rate, 'recon_spectrogram.png')
-
-        sf.write('reconstructed_audio.wav', inverted_stft, sample_rate)
-        plot_wav('reconstructed_audio.wav', 0)
-
-
-        original_mem = data.nbytes
-        compressed_mem = U_r.nbytes + S_r.nbytes + Vt_r.nbytes
-        print(f'Compressed memory is ~ {100 * (compressed_mem / original_mem):0.2f}% of the original.')
-
-        file_no += 1
-        
 
 if __name__ == '__main__':
     main()

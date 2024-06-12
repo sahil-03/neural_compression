@@ -69,31 +69,47 @@ include CMakeFiles/neural_compress.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/neural_compress.dir/flags.make
 
-CMakeFiles/neural_compress.dir/data_handler.cpp.o: CMakeFiles/neural_compress.dir/flags.make
-CMakeFiles/neural_compress.dir/data_handler.cpp.o: /Users/sahil/Documents/neuralink_compression/data_handler.cpp
-CMakeFiles/neural_compress.dir/data_handler.cpp.o: CMakeFiles/neural_compress.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sahil/Documents/neuralink_compression/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/neural_compress.dir/data_handler.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neural_compress.dir/data_handler.cpp.o -MF CMakeFiles/neural_compress.dir/data_handler.cpp.o.d -o CMakeFiles/neural_compress.dir/data_handler.cpp.o -c /Users/sahil/Documents/neuralink_compression/data_handler.cpp
+CMakeFiles/neural_compress.dir/stft.cpp.o: CMakeFiles/neural_compress.dir/flags.make
+CMakeFiles/neural_compress.dir/stft.cpp.o: /Users/sahil/Documents/neuralink_compression/stft.cpp
+CMakeFiles/neural_compress.dir/stft.cpp.o: CMakeFiles/neural_compress.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sahil/Documents/neuralink_compression/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/neural_compress.dir/stft.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neural_compress.dir/stft.cpp.o -MF CMakeFiles/neural_compress.dir/stft.cpp.o.d -o CMakeFiles/neural_compress.dir/stft.cpp.o -c /Users/sahil/Documents/neuralink_compression/stft.cpp
 
-CMakeFiles/neural_compress.dir/data_handler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/neural_compress.dir/data_handler.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sahil/Documents/neuralink_compression/data_handler.cpp > CMakeFiles/neural_compress.dir/data_handler.cpp.i
+CMakeFiles/neural_compress.dir/stft.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/neural_compress.dir/stft.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sahil/Documents/neuralink_compression/stft.cpp > CMakeFiles/neural_compress.dir/stft.cpp.i
 
-CMakeFiles/neural_compress.dir/data_handler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/neural_compress.dir/data_handler.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sahil/Documents/neuralink_compression/data_handler.cpp -o CMakeFiles/neural_compress.dir/data_handler.cpp.s
+CMakeFiles/neural_compress.dir/stft.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/neural_compress.dir/stft.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sahil/Documents/neuralink_compression/stft.cpp -o CMakeFiles/neural_compress.dir/stft.cpp.s
+
+CMakeFiles/neural_compress.dir/fft.cpp.o: CMakeFiles/neural_compress.dir/flags.make
+CMakeFiles/neural_compress.dir/fft.cpp.o: /Users/sahil/Documents/neuralink_compression/fft.cpp
+CMakeFiles/neural_compress.dir/fft.cpp.o: CMakeFiles/neural_compress.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sahil/Documents/neuralink_compression/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/neural_compress.dir/fft.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neural_compress.dir/fft.cpp.o -MF CMakeFiles/neural_compress.dir/fft.cpp.o.d -o CMakeFiles/neural_compress.dir/fft.cpp.o -c /Users/sahil/Documents/neuralink_compression/fft.cpp
+
+CMakeFiles/neural_compress.dir/fft.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/neural_compress.dir/fft.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sahil/Documents/neuralink_compression/fft.cpp > CMakeFiles/neural_compress.dir/fft.cpp.i
+
+CMakeFiles/neural_compress.dir/fft.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/neural_compress.dir/fft.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sahil/Documents/neuralink_compression/fft.cpp -o CMakeFiles/neural_compress.dir/fft.cpp.s
 
 # Object files for target neural_compress
 neural_compress_OBJECTS = \
-"CMakeFiles/neural_compress.dir/data_handler.cpp.o"
+"CMakeFiles/neural_compress.dir/stft.cpp.o" \
+"CMakeFiles/neural_compress.dir/fft.cpp.o"
 
 # External object files for target neural_compress
 neural_compress_EXTERNAL_OBJECTS =
 
-neural_compress: CMakeFiles/neural_compress.dir/data_handler.cpp.o
+neural_compress: CMakeFiles/neural_compress.dir/stft.cpp.o
+neural_compress: CMakeFiles/neural_compress.dir/fft.cpp.o
 neural_compress: CMakeFiles/neural_compress.dir/build.make
 neural_compress: CMakeFiles/neural_compress.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sahil/Documents/neuralink_compression/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable neural_compress"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sahil/Documents/neuralink_compression/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable neural_compress"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/neural_compress.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
